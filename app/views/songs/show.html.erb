@@ -1,0 +1,19 @@
+<div class="container-fluid bg-2 text-center">
+	<h3>Others who added <%= song.title %></h3>
+	<table class="table table-hover">
+		<thead>
+			<th>Name</th>
+			<th>Times Added</th>
+		</thead>
+		<tbody>
+			<% song.joins.each do |join| %>
+			<tr>
+				<td><a href="/users/<%= join.user.id %>"><%= join.user.first_name %></a></td>
+				<td><%= join.count %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<button class="btn"><a class="btn" href="<%= songs_path %>">Dashboard</a></button>
+	<button class="btn"><a class="btn" href="/logout" data_method="delete">Logout</a></button>
+</div>

@@ -1,0 +1,33 @@
+<div class="container-fluid text-center">
+	<div class="row">
+		<form class="col-sm-6" action="<%= users_path %>" method="POST">
+			<!-- this uses the route path given by default restful routes in RoR -->
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<h1>New Here? Register!</h1>
+			<div class='form-group'>
+				<label class="control-label" for="first_name">First Name</label>
+				<input type="text" class="form-control" placeholder="First Name" name="user[first_name]">
+			</div>
+			<div class='form-group'>
+				<label class="control-label" for="last_name">Last Name</label>
+				<input type="text" class="form-control" placeholder="Last Name" name="user[last_name]">
+			</div>
+			<div class='form-group'>
+				<label class="control-label" for="email">Email</label>
+				<input type="text" class="form-control" placeholder="Email" name="user[email]">
+			</div>
+			<div class='form-group'>
+				<label for="password">Password</label>
+				<input type="password" class="form-control" placeholder="Password" name="user[password]">
+			</div>
+			<div class='form-group'>
+				<label>Confirm Password</label>
+				<input type="password" class="form-control" placeholder="Password" name="user[password_confirmation]">
+			</div>
+			<div class='form-group'>
+				<button class="btn btn-default" type="submit" value="register">Sign Up</button>
+			</div>
+		</form>
+		<%= render 'partials/errors' %>
+	</div>	
+</div>
